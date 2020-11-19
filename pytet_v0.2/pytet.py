@@ -154,8 +154,8 @@ while True:
     elif key == 's': # move down
         top += 1
     elif key == 'w': # rotate the block clockwise
-        currBlk = transpose(currBlk)
-        currBlk = Matrix(currBlk)
+       
+        currBlk = Matrix(transpose(currBlk))
   
     elif key == ' ': # drop the block
         while not tempBlk.anyGreaterThan(1):
@@ -179,8 +179,8 @@ while True:
             top -= 1
             newBlockNeeded = True
         elif key == 'w': # undo: rotate the block counter-clockwise
-            currBlk = transpose1(currBlk)
-            currBlk = Matrix(currBlk)
+            
+            currBlk = Matrix(transpose1(currBlk))
             
            
             
