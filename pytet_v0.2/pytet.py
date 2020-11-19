@@ -31,25 +31,60 @@ def transpose(a):
 		b[2][2]=arra[0][2]
 		return b
 	elif n == 4:
-		b[0][0]=array[3][0] 
-		b[0][1]=array[2][0]
-		b[0][2]=array[1][0]
-		b[0][3]=array[0][0]
-		b[1][0]=array[3][1]
-		b[1][1]=array[2][1]
-		b[1][2]=array[1][1]
-		b[1][3]=array[0][1]
-		b[2][0]=array[3][2]
-		b[2][1]=array[2][2]
-		b[2][2]=array[1][2]
-		b[2][3]=array[0][2]
-		b[3][0]=array[3][3]
-		b[3][1]=array[2][3]
-		b[3][2]=array[1][3]
-		b[3][3]=array[0][3]
+		b[0][0]=arra[3][0] 
+		b[0][1]=arra[2][0]
+		b[0][2]=arra[1][0]
+		b[0][3]=arra[0][0]
+		b[1][0]=arra[3][1]
+		b[1][1]=arra[2][1]
+		b[1][2]=arra[1][1]
+		b[1][3]=arra[0][1]
+		b[2][0]=arra[3][2]
+		b[2][1]=arra[2][2]
+		b[2][2]=arra[1][2]
+		b[2][3]=arra[0][2]
+		b[3][0]=arra[3][3]
+		b[3][1]=arra[2][3]
+		b[3][2]=arra[1][3]
+		b[3][3]=arra[0][3]
 		return b
 
 
+def transpose1(a):
+	arra = a.get_array()
+	n = len(arra)
+	b = [[0 for i in range(n)] for e in range (n)]
+	if n == 2:
+		return a
+	elif n==3:
+		b[0][0] = arra[0][2]
+		b[0][1]=arra[1][2]
+		b[0][2]=arra[2][2]
+		b[1][0]=arra[0][1]
+		b[1][1]=arra[1][1]
+		b[1][2]=arra[2][1]
+		b[2][0]=arra[0][0]
+		b[2][1]=arra[1][0]
+		b[2][2]=arra[2][0]
+		return b
+	elif n == 4:
+		b[0][0]=arra[0][3] 
+		b[0][1]=arra[1][3]
+		b[0][2]=arra[2][3]
+		b[0][3]=arra[3][3]
+		b[1][0]=arra[0][2]
+		b[1][1]=arra[1][2]
+		b[1][2]=arra[2][2]
+		b[1][3]=arra[3][2]
+		b[2][0]=arra[0][1]
+		b[2][1]=arra[1][1]
+		b[2][2]=arra[2][1]
+		b[2][3]=arra[3][1]
+		b[3][0]=arra[0][0]
+		b[3][1]=arra[1][0]
+		b[3][2]=arra[2][0]
+		b[3][3]=arra[3][0]
+		return b
 ###
 ### initialize variables
 ###     
@@ -144,14 +179,10 @@ while True:
             top -= 1
             newBlockNeeded = True
         elif key == 'w': # undo: rotate the block counter-clockwise
-            currBlk = transpose(currBlk)
+            currBlk = transpose1(currBlk)
             currBlk = Matrix(currBlk)
-            currBlk = transpose(currBlk)
-            currBlk = Matrix(currBlk)
-            currBlk = transpose(currBlk)
-            currBlk = Matrix(currBlk)
-            currBlk = transpose(currBlk)
-            currBlk = Matrix(currBlk)
+            
+           
             
         elif key == ' ': # undo: move up
             newBlockNeeded =True
