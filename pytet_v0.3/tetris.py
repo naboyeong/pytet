@@ -84,11 +84,11 @@ class Tetris():
     def accept(self, key): # To be implemented!!
 
         self.state = TetrisState.Running
-		if key in ['01','02' ,'03' , '04' , '05', '06']:
-			self.state = TetrisSate.NewBlock
-			key = int(key)
-			self.idxBlockType = key
-			self.idxBlockDegree = 0
+	if key in ['01','02' ,'03' , '04' , '05', '06']:
+		self.state = TetrisSate.NewBlock
+		key = int(key)
+		self.idxBlockType = key
+		self.idxBlockDegree = 0
         	self.top = 0
         	self.left = Tetris.iScreenDw + self.iScreenDx//2 - 2
 			self.currBlk = Matrix(Tetris.setOfBlockObjects[self.idxBlockType][self.idxBlockDegree])
