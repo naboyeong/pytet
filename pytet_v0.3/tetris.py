@@ -100,7 +100,7 @@ class Tetris():
 			return self.state
 		
 		
-    	elif key == 'a': # move left
+    	if key == 'a': # move left
         	self.left -= 1
     	elif key == 'd': # move right
         	self.left += 1
